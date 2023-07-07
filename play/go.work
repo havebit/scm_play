@@ -1,3 +1,7 @@
 go 1.20
 
-use ./database
+use (
+	./api
+	./database
+	./mainpackage
+)

@@ -6,13 +6,13 @@ import (
 	"log"
 	"os"
 
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 func main() {
 	os.Remove("./foo.db")
 
-	db, err := sql.Open("sqlite3", "./foo.db")
+	db, err := sql.Open("sqlite", "./foo.db")
 	if err != nil {
 		log.Fatal(err)
 	}

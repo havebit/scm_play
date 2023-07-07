@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"strings"
+
+	_ "mainpackage/subpackage"
 )
 
 type weekday int
@@ -73,14 +75,12 @@ func doSomething(n int) {
 	fmt.Println(n)
 }
 
-func main() {
-	fn1, fn2 := factory()
-	fn1()
-	fn1()
-	fmt.Println(fn2())
+func init() {
+	fmt.Println("---")
+}
 
-	fn1()
-	fmt.Println(fn2())
+func main() {
+	fmt.Println("Hi")
 }
 
 func factory() (func(), func() int) {
